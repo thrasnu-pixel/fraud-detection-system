@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Fraud Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Header -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">AI-POWERED SECURITY</div>
+
+            <h1>Fraud Detection System</h1>
+
+            <p>
+                Analyze transaction data using a machine learning model
+                trained to identify potentially fraudulent transactions.
+            </p>
+        </div>
+    </header>
+
+
+    <!-- Main content -->
+    <main class="main-container">
+
+        <!-- Transaction Card -->
+        <section class="card">
+
+            <div class="card-header">
+                <div>
+                    <h2>Transaction Analysis</h2>
+                    <p>Enter transaction details or load a sample transaction.</p>
+                </div>
+
+                <div class="model-badge">
+                    Random Forest
+                </div>
+            </div>
+
+
+            <!-- Main Inputs -->
+            <div class="main-inputs">
+
+                <div class="input-card">
+                    <label for="Time">
+                        Transaction Time
+                    </label>
+
+                    <input
+                        type="number"
+                        id="Time"
+                        step="any"
+                        placeholder="Enter transaction time"
+                    >
+
+                    <small>
+                        Time value from the transaction dataset
+                    </small>
+                </div>
+
+
+                <div class="input-card">
+                    <label for="Amount">
+                        Transaction Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="Amount"
+                        step="any"
+                        min="0"
+                        placeholder="Enter amount"
+                    >
+
+                    <small>
+                        Amount of the transaction
+                    </small>
+                </div>
+
+            </div>
+
+
+            <!-- Demo Buttons -->
+            <div class="demo-section">
+
+                <h3>Try a Sample Transaction</h3>
+
+                <p>
+                    Use real transactions from the dataset to test the system.
+                </p>
+
+                <div class="demo-buttons">
+
+                    <button
+                        type="button"
+                        class="btn btn-legitimate"
+                        onclick="loadLegitimateSample()"
+                    >
+                        ✓ Load Legitimate Sample
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-fraud"
+                        onclick="loadFraudSample()"
+                    >
+                        ⚠ Load Fraud Sample
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Advanced Features -->
+            <details class="advanced-section">
+
+                <summary>
+                    <span>
+                        ⚙ Advanced Model Features
+                    </span>
+
+                    <span class="summary-note">
+                        V1 – V28
+                    </span>
+                </summary>
+
+                <div class="advanced-content">
+
+                    <div class="info-box">
+                        <strong>About these features</strong>
+
+                        <p>
+                            V1–V28 are anonymized features used internally by
+                            the trained machine learning model. They are
+                            derived from the original dataset and do not
+                            represent normal user-facing transaction fields.
+                        </p>
+                    </div>
+
+
+                    <div class="feature-grid">
+
+                        <div class="feature">
+                            <label for="V1">V1</label>
+                            <input type="number" id="V1" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V2">V2</label>
+                            <input type="number" id="V2" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V3">V3</label>
+                            <input type="number" id="V3" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V4">V4</label>
+                            <input type="number" id="V4" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V5">V5</label>
+                            <input type="number" id="V5" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V6">V6</label>
+                            <input type="number" id="V6" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V7">V7</label>
+                            <input type="number" id="V7" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V8">V8</label>
+                            <input type="number" id="V8" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V9">V9</label>
+                            <input type="number" id="V9" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V10">V10</label>
+                            <input type="number" id="V10" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V11">V11</label>
+                            <input type="number" id="V11" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V12">V12</label>
+                            <input type="number" id="V12" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V13">V13</label>
+                            <input type="number" id="V13" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V14">V14</label>
+                            <input type="number" id="V14" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V15">V15</label>
+                            <input type="number" id="V15" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V16">V16</label>
+                            <input type="number" id="V16" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V17">V17</label>
+                            <input type="number" id="V17" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V18">V18</label>
+                            <input type="number" id="V18" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V19">V19</label>
+                            <input type="number" id="V19" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V20">V20</label>
+                            <input type="number" id="V20" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V21">V21</label>
+                            <input type="number" id="V21" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V22">V22</label>
+                            <input type="number" id="V22" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V23">V23</label>
+                            <input type="number" id="V23" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V24">V24</label>
+                            <input type="number" id="V24" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V25">V25</label>
+                            <input type="number" id="V25" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V26">V26</label>
+                            <input type="number" id="V26" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V27">V27</label>
+                            <input type="number" id="V27" step="any">
+                        </div>
+
+                        <div class="feature">
+                            <label for="V28">V28</label>
+                            <input type="number" id="V28" step="any">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+
+            <!-- Analyze Button -->
+            <button
+                type="button"
+                class="analyze-button"
+                onclick="checkTransaction()"
+            >
+                <span>Analyze Transaction</span>
+                <span class="arrow">→</span>
+            </button>
+
+
+            <!-- Result -->
+            <div id="result" class="result hidden">
+
+                <div class="result-icon" id="resultIcon"></div>
+
+                <div class="result-content">
+
+                    <div class="result-label">
+                        Prediction
+                    </div>
+
+                    <h2 id="resultText"></h2>
+
+                    <div class="probability-row">
+                        <span>Fraud Probability</span>
+                        <strong id="probability"></strong>
+                    </div>
+
+                    <div class="progress-container">
+                        <div
+                            id="probabilityBar"
+                            class="progress-bar"
+                        ></div>
+                    </div>
+
+                    <p id="thresholdText"></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Error -->
+            <div id="error" class="error hidden"></div>
+
+        </section>
+
+
+        <!-- Information cards -->
+        <section class="info-grid">
+
+            <div class="info-card">
+                <div class="info-icon">🤖</div>
+
+                <h3>Machine Learning</h3>
+
+                <p>
+                    Uses a trained Random Forest classification model
+                    to identify suspicious transaction patterns.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <div class="info-icon">📊</div>
+
+                <h3>Risk Analysis</h3>
+
+                <p>
+                    The system calculates a fraud probability and compares
+                    it against the selected decision threshold.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <div class="info-icon">🔒</div>
+
+                <h3>Demonstration</h3>
+
+                <p>
+                    Built using an anonymized public credit-card
+                    transaction dataset for educational purposes.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+
+            <strong>Important:</strong>
+
+            This application is an educational machine-learning
+            demonstration. It is not a banking-grade fraud detection
+            system and should not be used to make real financial decisions.
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        AI Fraud Detection System · Machine Learning Project
+    </footer>
+
+</div>
+
+
+<script>
+
+    const featureNames = [
+        "Time",
+        "V1","V2","V3","V4","V5","V6","V7","V8","V9","V10",
+        "V11","V12","V13","V14","V15","V16","V17","V18","V19","V20",
+        "V21","V22","V23","V24","V25","V26","V27","V28",
+        "Amount"
+    ];
+
+
+    function setFeatureValues(data) {
+
+        featureNames.forEach(function(feature) {
+
+            const input = document.getElementById(feature);
+
+            if (input && data[feature] !== undefined) {
+                input.value = data[feature];
+            }
+
+        });
+
+    }
+
+
+    function clearResult() {
+
+        document.getElementById("result").classList.add("hidden");
+        document.getElementById("error").classList.add("hidden");
+
+    }
+
+
+    async function loadLegitimateSample() {
+
+        clearResult();
+
+        try {
+
+            const response = await fetch("/sample");
+
+            const data = await response.json();
+
+            if (data.error) {
+                throw new Error(data.error);
+            }
+
+            setFeatureValues(data);
+
+            document.getElementById("result").classList.add("hidden");
+
+        } catch (error) {
+
+            showError(error.message);
+
+        }
+
+    }
+
+
+    async function loadFraudSample() {
+
+        clearResult();
+
+        try {
+
+            const response = await fetch("/sample-fraud");
+
+            const data = await response.json();
+
+            if (data.error) {
+                throw new Error(data.error);
+            }
+
+            setFeatureValues(data);
+
+            document.getElementById("result").classList.add("hidden");
+
+        } catch (error) {
+
+            showError(error.message);
+
+        }
+
+    }
+
+
+    async function checkTransaction() {
+
+        clearResult();
+
+        const data = {};
+
+
+        for (const feature of featureNames) {
+
+            const input = document.getElementById(feature);
+
+            if (!input || input.value === "") {
+
+                showError(
+                    "Please provide a value for " + feature +
+                    ". You can also use one of the sample transaction buttons."
+                );
+
+                return;
+
+            }
+
+            data[feature] = parseFloat(input.value);
+
+        }
+
+
+        const button = document.querySelector(".analyze-button");
+
+        button.disabled = true;
+
+        button.querySelector("span:first-child").textContent =
+            "Analyzing...";
+
+
+        try {
+
+            const response = await fetch("/predict", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(data)
+
+            });
+
+
+            const result = await response.json();
+
+
+            if (!response.ok || result.error) {
+                throw new Error(result.error || "Prediction failed.");
+            }
+
+
+            displayResult(result);
+
+
+        } catch (error) {
+
+            showError(error.message);
+
+        } finally {
+
+            button.disabled = false;
+
+            button.querySelector("span:first-child").textContent =
+                "Analyze Transaction";
+
+        }
+
+    }
+
+
+    function displayResult(result) {
+
+        const resultBox = document.getElementById("result");
+        const resultText = document.getElementById("resultText");
+        const probability = document.getElementById("probability");
+        const probabilityBar = document.getElementById("probabilityBar");
+        const thresholdText = document.getElementById("thresholdText");
+        const resultIcon = document.getElementById("resultIcon");
+
+
+        const probabilityPercent =
+            result.fraud_probability * 100;
+
+
+        resultBox.classList.remove(
+            "hidden",
+            "fraud-result",
+            "safe-result"
+        );
+
+
+        if (result.prediction === 1) {
+
+            resultBox.classList.add("fraud-result");
+
+            resultIcon.textContent = "⚠";
+
+            resultText.textContent =
+                "Potentially Fraudulent Transaction";
+
+        } else {
+
+            resultBox.classList.add("safe-result");
+
+            resultIcon.textContent = "✓";
+
+            resultText.textContent =
+                "Legitimate Transaction";
+
+        }
+
+
+        probability.textContent =
+            probabilityPercent.toFixed(2) + "%";
+
+
+        probabilityBar.style.width =
+            probabilityPercent + "%";
+
+
+        thresholdText.textContent =
+            "Decision threshold: " +
+            result.threshold;
+
+    }
+
+
+    function showError(message) {
+
+        const errorBox = document.getElementById("error");
+
+        errorBox.textContent = "⚠ " + message;
+
+        errorBox.classList.remove("hidden");
+
+    }
+
+</script>
+
+</body>
+</html>
